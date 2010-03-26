@@ -26,7 +26,7 @@ class Clearpath
     login
     get("/Group/Hunt_Group/")
 
-    href = page.link_with(:text => 'Theater Hunt').href
+    href = page.link_with(:text => name).href
     key = href.match(/key=(.*?)&/).to_a.last
     get("/Group/Hunt_Group/Modify/index.jsp?key=#{key}")
   end
