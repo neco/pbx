@@ -2,7 +2,7 @@ require 'mechanize'
 
 class Clearpath
   HOST = 'https://ews2.cpmvp.net'.freeze
-  FORWARD_DELAY = { :day => 24, :night => 1 }.freeze
+  FORWARD_DELAY = { :day => 15, :night => 1 }.freeze
 
   attr_reader :page
 
