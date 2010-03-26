@@ -1,0 +1,18 @@
+%h2 Hunt Groups
+
+%table
+  %tr
+    %th Hunt Group
+    %th Mode
+
+  - @hunt_groups.each do |hunt_group|
+    %tr
+      %td= hunt_group.name
+      %td
+        %form{ :action => "/hunt-groups/#{hunt_group.id}", :method => 'post' }
+          - if hunt_group.day?
+            Day
+            %input{ :type => 'submit', :name => 'mode', :value => 'Night' }
+          - elsif hunt_group.night?
+            %input{ :type => 'submit', :name => 'mode', :value => 'Day' }
+            Night

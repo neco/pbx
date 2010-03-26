@@ -1,0 +1,6 @@
+*.log
+*.sqlite3
+.DS_Store
+.sass-cache
+bin
+vendor/gems

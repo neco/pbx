@@ -1,0 +1,16 @@
+!!!Strict
+%html{ html_attrs }
+  %head
+    %title NECO PBX System
+    %link{ :rel => 'stylesheet', :href => '/stylesheets/master.css', :type => 'text/css' }
+
+  %body
+    #page
+      #header
+        %h1
+          %a{ :href => '/' } NECO PBX System
+
+      #content= yield
+
+      #footer
+        %small &copy;

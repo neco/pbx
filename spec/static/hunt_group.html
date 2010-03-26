@@ -1,0 +1,1067 @@
+<!--  Copyright 2000-2009, BroadSoft, Inc. All rights reserved. Proprietary Property of BroadSoft, Inc. Gaithersburg, MD. -->
+
+
+
+
+
+
+<!--  Copyright 2000-2009, BroadSoft, Inc. All rights reserved. Proprietary Property of BroadSoft, Inc. Gaithersburg, MD. -->
+<!--  Copyright 2000-2009, BroadSoft, Inc. All rights reserved. Proprietary Property of BroadSoft, Inc. Gaithersburg, MD. -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- General Text Messages -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+<!--  Copyright 2000-2009, BroadSoft, Inc. All rights reserved. Proprietary Property of BroadSoft, Inc. Gaithersburg, MD. -->
+
+
+
+<!--  Copyright 2000-2009, BroadSoft, Inc. All rights reserved. Proprietary Property of BroadSoft, Inc. Gaithersburg, MD. -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- General Text Messages -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <html>
+
+ <head>
+  <script language="JavaScript" src="/Scripts/graphics.js"></script>
+  <link rel="stylesheet" type="text/css" href="/Common/styles.css">
+  <link rel="stylesheet" type="text/css" href="/Graphics/Tropical/styles.css">
+  <title>Profile</title>
+ </head>
+ <body topmargin="10" leftmargin="30" marginheight="10" marginwidth="30"
+       bgproperties="fixed" onLoad="initSelection()">
+   <!--  Copyright 2000-2009, BroadSoft, Inc. All rights reserved. Proprietary Property of BroadSoft, Inc. Gaithersburg, MD. -->
+
+
+
+
+
+
+
+<!--  Copyright 2000-2009, BroadSoft, Inc. All rights reserved. Proprietary Property of BroadSoft, Inc. Gaithersburg, MD. -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- General Text Messages -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/Scripts/deployJava.js"></script>
+<script language="JavaScript">
+var commpilot = null;
+var ac = null;
+var revisedCallManager = null;
+var onlineHelp = null;
+var helpFile = "/Help/en_US/User/User_Profile_Menu.htm";
+
+// Launch the combined Call Manager / Attendant Console client
+function launchCallManagerClient()
+{
+  var uniqueId = '';
+  var spId = 'CTI';
+
+  if ((revisedCallManager) && !(revisedCallManager.closed))
+  {
+    revisedCallManager.focus();
+  }
+  else
+  {
+    revisedCallManager=window.open("/CallManager/CallManagerDownload.jsp?serviceProvID=" + spId, uniqueId,
+                                   "width=505,height=360,resizable=1,status=0,scrollbars=no");
+    revisedCallManager.focus();
+  }
+}
+
+function launchHelp()
+{
+   help = window.open(helpFile,"onLineHelp");
+   help.focus();
+}
+
+function launchClientApplication(url)
+{
+  if(!deployJava.isWebStartInstalled("1.6.0_13"))
+  {
+  	if(deployJava.installJRE("1.6.0_13"))
+  	{
+  		deployJava.launch(url);
+  	}
+  }
+  else
+  {
+    deployJava.launch(url);
+  }
+}
+
+function selectedLinkChanged(selectedLink) 
+{
+  var choice = selectedLink.options[selectedLink.selectedIndex].value;
+
+  if (choice == "callmanager")
+  {
+    launchCallManagerClient();
+  }
+  else if(choice == "callcenter")
+  {
+    launchClientApplication("/servlet/jws/callcenter/callcenter.jnlp")
+  }
+  else if(choice == "receptionist")
+  {
+    launchClientApplication("/servlet/jws/receptionist/receptionist.jnlp")
+  }
+
+  selectedLink.selectedIndex = 0;
+}
+</script>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+  <td colspan="3" align="center" width="100%" valign="middle">
+  <!-- client banner -->
+  
+    <a href="#" onClick="window.open('http://www.consoltech.com')" target="_top">
+      <img border="0" src="/conf/CTI/banner.gif">
+    </a>
+  
+  </td>
+</tr>
+
+<tr>
+  <!-- header -->
+  <td colspan=3 width="100%">
+  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tr>
+      <td class="headerBar" colspan="2"><img src="/Graphics/onepx.gif" width="2" height="2" alt="" border="0"></td>
+    </tr>
+
+    <tr>
+    <td align="left" valign="middle" class="headerBar">
+      <!-- client logo -->
+      
+           <img src="/conf/CTI/clientLogo.gif">
+      
+    </td>
+    <td valign="middle" align="right" class="headerBar">
+
+       
+       
+
+      
+
+      <a  class="headerLink" href="javascript:launchHelp()">Help</a>
+
+      
+        &nbsp;-&nbsp;
+        <a class="headerLink" href="/Common/folder_contents.jsp?menuId=1">Home</a>
+      
+
+
+    </td>
+    <td class="headerBar"><img src="/Graphics/onepx.gif" width="2" height="1" alt="" border="0"></td>
+  </tr>
+  <tr>
+    <td class="headerBar" colspan="3"><img src="/Graphics/onepx.gif" width="2" height="5" alt="" border="0"></td>
+  </tr>
+  <tr>
+    <td class="headerBar"><img src="/Graphics/onepx.gif" width="2" height="1" alt="" border="0">
+
+      
+        
+          <a class="headerAuthLevelLink" href="/Common/folder_contents.jsp?menuId=1">
+          Group
+          </a>
+        
+
+        
+
+        
+        
+        
+                &#062;
+          <a class="headerAuthLevelLink" href="/Group/Hunt_Group/">
+          Hunt Groups
+          </a>
+        
+        
+        
+                 :
+                <SPAN dir='ltr' class=headerAuthLevel>
+                2127928644@cpmvp.net
+                </SPAN>
+        
+      
+
+              </td>
+    <td class="headerBar" align="right">
+        <SPAN class="headerBarWelcome">Welcome&nbsp; &nbsp;</SPAN>
+          
+
+           <!-- Display Sign Out button -->
+           <a class="headerLink" href="/servlet/Logout">[Logout]</a>
+    </td>
+    <td class="headerBar"><img src="/Graphics/onepx.gif" width="2" height="1" alt="" border="0"></td>
+  </tr>
+  <tr>
+    <td class="headerBar" colspan="3"><img src="/Graphics/onepx.gif" width="2" height="2" alt="" border="0"></td>
+  </tr>
+  </table>
+  </td>
+ </tr>
+</table>
+
+  <script language="JavaScript">
+// Try to close the window.  If we can't, logout.
+// Scripts aren't legally allowed to close a window that was not opened by a script,
+// but IE seems to allow it.  Firefox (Mozilla) doesn't.
+function userLogout ()
+{
+  window.close();   // IE will return here if user opts not to close window,
+  if (document.all) // and Mozilla browsers will return here because you can't close the window.
+    return;         // If we're running an IE browser.
+  top.location.replace("/servlet/Logout");
+}
+</script>
+
+   <table border="0" cellpadding="0" cellspacing="0" width="100%" height="100%">
+     <tr><td colspan="4" class="headandfoot" height="12">
+          </td>
+     </tr>
+
+	<tr>
+		<td width="18%" valign="top" class="headandfoot"><!--  Copyright 2000-2009, BroadSoft, Inc. All rights reserved. Proprietary Property of BroadSoft, Inc. Gaithersburg, MD. -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--  Copyright 2000-2009, BroadSoft, Inc. All rights reserved. Proprietary Property of BroadSoft, Inc. Gaithersburg, MD. -->
+<!--  Copyright 2000-2009, BroadSoft, Inc. All rights reserved. Proprietary Property of BroadSoft, Inc. Gaithersburg, MD. -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- General Text Messages -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<form name="leftNavForm" method="post">
+<b>
+
+<script language="JavaScript">function addAltText(img, altText) {  img.alt = altText;}</script><TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD class="navOptions">Options:</TD></TR><TR>
+<TD class="leftnavfolderopen" nowrap>
+<img border=0 alt="" src="/Graphics/Tropical/ar.gif">&nbsp;&nbsp;<A class="leftnavfolderopen" HREF="/Common/folder_contents.jsp?folder=U0&amp;menuId=0">Profile</A>
+</TD>
+</TR>
+<TR>
+<TD class="leftnavfolder" nowrap>
+<A class="leftnavfolder" HREF="/Common/folder_contents.jsp?folder=U35&amp;menuId=0">Calling Plans</A>
+</TD>
+</TR>
+</TABLE>
+
+</b>
+</form>
+</td>
+        <td class="headandfoot"><img src="/Graphics/onepx.gif" width="10" height="1" alt="" border="0"></td>
+        <td valign="top">
+          <table cellpadding="0" cellspacing="0" border="0">
+            <tr>
+			
+              <td class="headandfoot"><img src="/Graphics/round-corner.gif" width="5" height="5"></td>
+			
+            </tr>
+          </table>
+        </td>
+
+        <td valign="top" width="82%">
+         <table border="0" cellpadding="0" cellspacing="0" width="100%">
+         <tr><td height="15"></td></tr>
+         <script language="JavaScript">
+         
+             helpFile = "/Help/en_US/User/User_Profile_Menu.htm";
+         
+         </script>
+   		 <tr><td class="screenName">Profile</td></tr>
+         <tr><td height="5"></td></tr>
+         
+         <tr><td><!--  Copyright 2000-2009, BroadSoft, Inc. All rights reserved. Proprietary Property of BroadSoft, Inc. Gaithersburg, MD. -->
+
+
+<!--  Copyright 2000-2009, BroadSoft, Inc. All rights reserved. Proprietary Property of BroadSoft, Inc. Gaithersburg, MD. -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- General Text Messages -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script language="JavaScript">function addAltText(img, altText) {  img.alt = altText;}</script><TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%"><TR><TD WIDTH="50%" ALIGN="LEFT" VALIGN="TOP"><TABLE WIDTH="100%"><TR><TD class="menuCategory">Basic</TD></TR><TR><TD height="5"></TD></TR><TR>
+<TD ALIGN="left">
+<a class="navMenuItem"  name="/Group/Hunt_Group/Modify/index.jsp?key=2127928644%40cpmvp.net"  href="/Group/Hunt_Group/Modify/index.jsp?key=2127928644%40cpmvp.net" >Profile</a></TD>
+</TR>
+<TR>
+<TD ALIGN="left">
+Display and configure profile information and members for this hunt group.</TD>
+</TR>
+<TR><TD height="5"></TD></TR><TR>
+<TD ALIGN="left">
+<a class="navMenuItem"  name="/Group/Hunt_Group/Addresses/index.jsp?key=2127928644%40cpmvp.net"  href="/Group/Hunt_Group/Addresses/index.jsp?key=2127928644%40cpmvp.net" >Addresses</a></TD>
+</TR>
+<TR>
+<TD ALIGN="left">
+Display and configure information such as phone number, extension, and identity/device profile for this hunt group.</TD>
+</TR>
+<TR><TD height="5"></TD></TR><TR>
+<TD ALIGN="left">
+<a class="navMenuItem"  name="/User/Password/"  href="/User/Password/" >Password</a></TD>
+</TR>
+<TR>
+<TD ALIGN="left">
+Configure the voice portal password for this hunt group.</TD>
+</TR>
+<TR><TD height="5"></TD></TR><TR>
+<TD ALIGN="left">
+<a class="navMenuItem"  name="/User/VoicePortal/"  href="/User/VoicePortal/" >Voice Portal</a></TD>
+</TR>
+<TR>
+<TD ALIGN="left">
+Change voice portal options of the hunt group.</TD>
+</TR>
+<TR><TD height="5"></TD></TR></TABLE></TD><TD WIDTH="50%" ALIGN="LEFT" VALIGN="TOP"><TABLE WIDTH="100%"><TR><TD class="menuCategory">Advanced</TD></TR><TR><TD height="5"></TD></TR><TR>
+<TD ALIGN="left">
+<a class="navMenuItem"  name="/User/OCICAppPolicies/"  href="/User/OCICAppPolicies/" >Call Application Policies</a></TD>
+</TR>
+<TR>
+<TD ALIGN="left">
+Select Call Control Applications enabled for a user.</TD>
+</TR>
+<TR><TD height="5"></TD></TR><TR>
+<TD ALIGN="left">
+<a class="navMenuItem"  name="/User/CallPolicies/"  href="/User/CallPolicies/" >Call Policies</a></TD>
+</TR>
+<TR>
+<TD ALIGN="left">
+Configure user Call Policies</TD>
+</TR>
+<TR><TD height="5"></TD></TR></TABLE></TD></TR></TABLE>
+</td></tr>
+         
+	   
+         </table>
+        </td>
+     </tr>
+	</table>
+	<!--  Copyright 2000-2009, BroadSoft, Inc. All rights reserved. Proprietary Property of BroadSoft, Inc. Gaithersburg, MD. -->
+
+
+ </body>
+</html>
+
