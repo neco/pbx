@@ -1,5 +1,6 @@
 ENV['RACK_ENV'] = 'test'
 
+require 'rubygems'
 require 'pbx'
 
 require 'fakeweb'

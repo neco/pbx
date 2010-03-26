@@ -15,12 +15,16 @@ class PBX < Sinatra::Base
     clearpath.password = '060381drew'
   }
 
-  configure :development, :production do
+  configure :development do
     set :database_uri, "sqlite3://#{Dir.pwd / 'db.sqlite3'}".freeze
   end
 
   configure :test do
     set :database_uri, "sqlite3://#{Dir.pwd / 'test.sqlite3'}".freeze
+  end
+
+  configure :production do
+    set :database_uri, ENV['DATABASE_URL']
   end
 
   get '/hunt-groups' do
