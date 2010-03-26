@@ -1,3 +1,4 @@
+data_objects --version "0.10.1"
 dm-core --version "0.10.2"
 dm-timestamps --version "0.10.2"
 do_sqlite3 --version "0.10.1"
