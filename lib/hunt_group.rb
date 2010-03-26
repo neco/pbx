@@ -20,13 +20,8 @@ class HuntGroup
     state(:day)
     state(:night)
 
-    event(:wake) do
-      transition(all => :day)
-    end
-
-    event(:sleep) do
-      transition(all => :night)
-    end
+    event(:wake) { transition(all => :day) }
+    event(:sleep) { transition(all => :night) }
 
     after_transition(:do => :set_forward_delay)
   end
